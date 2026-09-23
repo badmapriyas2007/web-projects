@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Profile Card</title>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background-color: palevioletred;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container{
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0 0 10px lightgoldenrodyellow;
+        }
+
+        input{
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
+        }
+
+        button{
+            padding: 10px 20px;
+            background: darkorchid;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover{
+            background:lightpink;
+        }
+
+        .card{
+            margin-top: 20px;
+            border: 2px solid purple;
+            border-radius: 10px;
+            padding: 15px;
+            background: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>Student Profile Card</h2>
+
+    <input type="text" id="name" placeholder="Enter Student Name">
+
+    <input type="text" id="roll" placeholder="Enter Roll No">
+
+    <input type="number" id="marks" placeholder="Enter Marks">
+
+    <br><br>
+
+    <button onclick="displayProfile()">Display Profile</button>
+
+    <div class="card">
+        <h3>Profile</h3>
+
+        <p><b>Name:</b> <span id="sname"></span></p>
+
+        <p><b>Roll No:</b> <span id="sroll"></span></p>
+
+        <p><b>Marks:</b> <span id="smarks"></span></p>
+
+        <p><b>Grade:</b> <span id="sgrade"></span></p>
+    </div>
+
+</div>
+
+<script>
+
+function displayProfile(){
+
+    let name = document.getElementById("name").value;
+    let roll = document.getElementById("roll").value;
+    let marks = Number(document.getElementById("marks").value);
+
+    let grade;
+
+    if(marks >= 90){
+        grade = "A+";
+    }
+    else if(marks >= 80){
+        grade = "A";
+    }
+    else if(marks >= 70){
+        grade = "B";
+    }
+    else if(marks >= 60){
+        grade = "C";
+    }
+    else if(marks >= 50){
+        grade = "D";
+    }
+    else{
+        grade = "F";
+    }
+
+    document.getElementById("sname").innerHTML = name;
+    document.getElementById("sroll").innerHTML = roll;
+    document.getElementById("smarks").innerHTML = marks;
+    document.getElementById("sgrade").innerHTML = grade;
+}
+
+</script>
+
+</body>
+</html>
