@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 
 import TravellingImage from "./assets/Travelling.png";
-import musicImage from "./assets/music.jpg";
+import musicImage from "./assets/Music.jpg";
 import DancingImage from "./assets/Dance.avif";
 
 function App() {
