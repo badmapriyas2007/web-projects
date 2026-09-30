@@ -10,8 +10,11 @@ import Contact from "./Pages/Contact";
 import "./App.css";
 
 function App() {
+  const basename =
+    import.meta.env.BASE_URL === "/" ? undefined : import.meta.env.BASE_URL;
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Navbar />
 
       <Routes>

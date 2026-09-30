@@ -1,0 +1,144 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "portal": {
+      "root": "portal",
+      "framework": "vite",
+      "buildCommand": "npm run build"
+    },
+    "unit1_project1": {
+      "root": "Unit-1(Project1)/unit1-project1",
+      "framework": "vite",
+      "buildCommand": "VITE_BASE_PATH=/unit-1/project-1/ npm run build",
+      "routes": [
+        {
+          "src": "^/unit-1/project-1/?(.*)$",
+          "transforms": [{ "type": "request.path", "op": "set", "args": "/$1" }]
+        }
+      ]
+    },
+    "unit1_project2": {
+      "root": "Unit-1(Project2)/unit1-project2",
+      "framework": "vite",
+      "buildCommand": "VITE_BASE_PATH=/unit-1/project-2/ npm run build",
+      "routes": [
+        {
+          "src": "^/unit-1/project-2/?(.*)$",
+          "transforms": [{ "type": "request.path", "op": "set", "args": "/$1" }]
+        }
+      ]
+    },
+    "unit2_project1": {
+      "root": "Unit-2(Project1)/project1",
+      "framework": "vite",
+      "buildCommand": "VITE_BASE_PATH=/unit-2/project-1/ npm run build",
+      "routes": [
+        {
+          "src": "^/unit-2/project-1/?(.*)$",
+          "transforms": [{ "type": "request.path", "op": "set", "args": "/$1" }]
+        }
+      ]
+    },
+    "unit2_project2": {
+      "root": "Unit-2(Project2)/unit2",
+      "framework": "vite",
+      "buildCommand": "VITE_BASE_PATH=/unit-2/project-2/ npm run build",
+      "routes": [
+        {
+          "src": "^/unit-2/project-2/?(.*)$",
+          "transforms": [{ "type": "request.path", "op": "set", "args": "/$1" }]
+        }
+      ]
+    },
+    "unit3_project1": {
+      "root": "Unit-3(project1)/project-3",
+      "framework": "vite",
+      "buildCommand": "VITE_BASE_PATH=/unit-3/project-1/ npm run build",
+      "routes": [
+        {
+          "src": "^/unit-3/project-1/?(.*)$",
+          "transforms": [{ "type": "request.path", "op": "set", "args": "/$1" }]
+        }
+      ]
+    },
+    "unit3_project2": {
+      "root": "Unit-3(project2)/unit3-project",
+      "framework": "vite",
+      "buildCommand": "VITE_BASE_PATH=/unit-3/project-2/ npm run build",
+      "routes": [
+        {
+          "src": "^/unit-3/project-2/?(.*)$",
+          "transforms": [{ "type": "request.path", "op": "set", "args": "/$1" }]
+        }
+      ]
+    },
+    "unit4_project1": {
+      "root": "Unit-4(project1)/unit4-project1",
+      "framework": "vite",
+      "buildCommand": "VITE_BASE_PATH=/unit-4/project-1/ npm run build",
+      "routes": [
+        {
+          "src": "^/unit-4/project-1/?(.*)$",
+          "transforms": [{ "type": "request.path", "op": "set", "args": "/$1" }]
+        }
+      ]
+    },
+    "unit4_project2": {
+      "root": "Unit-4(project2)/Unit4-project2",
+      "framework": "vite",
+      "buildCommand": "VITE_BASE_PATH=/unit-4/project-2/ npm run build",
+      "routes": [
+        {
+          "src": "^/unit-4/project-2/?(.*)$",
+          "transforms": [{ "type": "request.path", "op": "set", "args": "/$1" }]
+        }
+      ]
+    },
+    "unit5_project1": {
+      "root": "unit 5 project1/unit 5( project1)",
+      "framework": "vite",
+      "buildCommand": "VITE_BASE_PATH=/unit-5/project-1/ npm run build",
+      "routes": [
+        {
+          "src": "^/unit-5/project-1/?(.*)$",
+          "transforms": [{ "type": "request.path", "op": "set", "args": "/$1" }]
+        }
+      ]
+    },
+    "unit5_project2": {
+      "root": "Unit-5(project2)/unit5-project2",
+      "framework": "vite",
+      "buildCommand": "VITE_BASE_PATH=/unit-5/project-2/ npm run build",
+      "routes": [
+        {
+          "src": "^/unit-5/project-2/?(.*)$",
+          "transforms": [{ "type": "request.path", "op": "set", "args": "/$1" }]
+        }
+      ]
+    }
+  },
+  "rewrites": [
+    { "source": "/", "destination": { "service": "portal" } },
+    { "source": "/unit-1/project-1", "destination": { "service": "unit1_project1" } },
+    { "source": "/unit-1/project-1/(.*)", "destination": { "service": "unit1_project1" } },
+    { "source": "/unit-1/project-2", "destination": { "service": "unit1_project2" } },
+    { "source": "/unit-1/project-2/(.*)", "destination": { "service": "unit1_project2" } },
+    { "source": "/unit-2/project-1", "destination": { "service": "unit2_project1" } },
+    { "source": "/unit-2/project-1/(.*)", "destination": { "service": "unit2_project1" } },
+    { "source": "/unit-2/project-2", "destination": { "service": "unit2_project2" } },
+    { "source": "/unit-2/project-2/(.*)", "destination": { "service": "unit2_project2" } },
+    { "source": "/unit-3/project-1", "destination": { "service": "unit3_project1" } },
+    { "source": "/unit-3/project-1/(.*)", "destination": { "service": "unit3_project1" } },
+    { "source": "/unit-3/project-2", "destination": { "service": "unit3_project2" } },
+    { "source": "/unit-3/project-2/(.*)", "destination": { "service": "unit3_project2" } },
+    { "source": "/unit-4/project-1", "destination": { "service": "unit4_project1" } },
+    { "source": "/unit-4/project-1/(.*)", "destination": { "service": "unit4_project1" } },
+    { "source": "/unit-4/project-2", "destination": { "service": "unit4_project2" } },
+    { "source": "/unit-4/project-2/(.*)", "destination": { "service": "unit4_project2" } },
+    { "source": "/unit-5/project-1", "destination": { "service": "unit5_project1" } },
+    { "source": "/unit-5/project-1/(.*)", "destination": { "service": "unit5_project1" } },
+    { "source": "/unit-5/project-2", "destination": { "service": "unit5_project2" } },
+    { "source": "/unit-5/project-2/(.*)", "destination": { "service": "unit5_project2" } },
+    { "source": "/(.*)", "destination": { "service": "portal" } }
+  ]
+}

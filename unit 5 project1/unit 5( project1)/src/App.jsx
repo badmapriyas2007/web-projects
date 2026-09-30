@@ -836,6 +836,8 @@ function Settings({ darkMode, setDarkMode }) {
 /* ================= MAIN APP ================= */
 
 function App() {
+  const basename =
+    import.meta.env.BASE_URL === "/" ? undefined : import.meta.env.BASE_URL;
 
   const [tasks, setTasks] =
     useState(initialTasks);
@@ -845,7 +847,7 @@ function App() {
 
   return (
 
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
 
       <div className={
         darkMode

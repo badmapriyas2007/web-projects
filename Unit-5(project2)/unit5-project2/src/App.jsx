@@ -204,8 +204,11 @@ function NotFound() {
 }
 
 function App() {
+  const basename =
+    import.meta.env.BASE_URL === "/" ? undefined : import.meta.env.BASE_URL;
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <div className="app">
 
         <nav className="navbar">

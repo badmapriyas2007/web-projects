@@ -17,7 +17,7 @@ function Navbar() {
       </div>
 
       <a
-        href="/resume.pdf"
+        href={`${import.meta.env.BASE_URL}resume.pdf`}
         className="resume-btn"
         target="_blank"
       >
